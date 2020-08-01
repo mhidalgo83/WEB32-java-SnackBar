@@ -1,15 +1,20 @@
 package snackbar;
 
+
+
 public class Snack {
-    private int id, maxId, machineId, quantity;
+    
+    private static int maxId = 0;
+    private int id, machineId, quantity;
     private String name;
     private double cost;
 
-    public Snack( String name, int quantity, double cost, int machineId) {
+    public Snack(String name, int quantity, double cost) {
+        maxId++;
+        id = maxId;
         this.name = name;
         this.quantity = quantity;
         this.cost = cost;
-        this.machineId = machineId;
     }
 
     // GETTERS
@@ -29,11 +34,11 @@ public class Snack {
         return machineId;
     }
 
-    public int getQuanitity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public double getTotalCost() {
+    public double getTotalCost(int quantity, double cost) {
         return quantity * cost;
     }
 
@@ -50,12 +55,12 @@ public class Snack {
         this.machineId = machineId;
     }
 
-    public void setNewQuantity(int quantity) {
-        this.quantity = this.quantity + quantity;
+    public void setAddSnack(int added) {
+        this.quantity = this.quantity + added;
     }
 
-    public void buySnack(int quantity) {
-        this.quantity = this.quantity - quantity;
+    public void setSubSnack(int bought) {
+        this.quantity = this.quantity - bought;
     }
 
 }

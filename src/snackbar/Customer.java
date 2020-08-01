@@ -1,19 +1,24 @@
 package snackbar;
 
+
+
 public class Customer {
+    
     private String name;
+    private static int maxId = 0;
     private int id;
-    private int maxId;
     private double cashOnHand;
 
     public Customer(String name, double cashOnHand) {
+        maxId++;
+        id = maxId;
         this.name = name;
         this.cashOnHand = cashOnHand;
     }
 
     // GETTERS
     // Gets id of customer
-    public int customerId() {
+    public int getCustomerId() {
         return id;
     }
 
@@ -35,12 +40,17 @@ public class Customer {
     }
 
     // Sets cash on hand after buying snacks
-    public void buySnacks(double cost) {
-        this.cashOnHand = this.cashOnHand - cost;
+    public void setSubCash(double totalCost) {
+        this.cashOnHand = this.cashOnHand - totalCost;
     }
 
     // sets new cash by adding
-    public void addCash(double cash) {
+    public void setAddCash(double cash) {
         this.cashOnHand = this.cashOnHand + cash;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer: " + name + " with id: " + id;
     }
 }

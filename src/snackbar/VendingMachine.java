@@ -2,10 +2,12 @@ package snackbar;
 
 public class VendingMachine {
     private String name;
-    private int maxId;
+    private static int maxId = 0;
     private int id;
 
     public VendingMachine(String name) {
+        maxId++;
+        id = maxId;
         this.name = name;
     }
 
