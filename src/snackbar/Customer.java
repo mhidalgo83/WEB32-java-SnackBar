@@ -1,9 +1,10 @@
 package snackbar;
 
-
+import java.text.DecimalFormat;
 
 public class Customer {
-    
+
+    private static DecimalFormat df = new DecimalFormat("$#,###0.00");
     private String name;
     private static int maxId = 0;
     private int id;
@@ -28,8 +29,8 @@ public class Customer {
     }
 
     // Gets cash on hand
-    public double getCashOnHand() {
-        return cashOnHand;
+    public String getCashOnHand() {
+        return df.format(cashOnHand);
     }
 
     // SETTERS

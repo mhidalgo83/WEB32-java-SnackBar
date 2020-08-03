@@ -20,6 +20,7 @@ public class VendingMachine {
         return this.name;
     }
 
+
     // SETTERS
     public void setName(String name) {
         this.name = name;
